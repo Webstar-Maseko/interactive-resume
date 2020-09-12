@@ -1,16 +1,41 @@
 body{
-  color: white;
-  text-align: center;
-  font-size: 17px;
+  color: black;
+  font-size: 1.7vw;
   margin: 0;
+  font-family: 'Play', sans-serif;
 
+}
+hr{
+  border-style: dotted;
+  border-width: thin;
+  border-color: grey;
+
+
+}
+.profilePic{
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  border-style: double;
+  border-color:brown;
+  float: left;
+
+
+}
+.container-fluid{
+
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+.hColor{
+  color: #81b214;
 }
 .land{
     background-image: url("/images/header.gif");
     background-position: center;
 }
 .land .container{
-  text-align: center;
+
   position: relative;
 
   top: 28%;
@@ -20,12 +45,13 @@ body{
 .navbar{
   background-color: black;
   position: sticky;
+  text-align: center;
 
 }
 .navbar .icon{
   display: none;
 }
-.navbar a.active{
+.navbar .active{
 
   color: brown;
 }
@@ -40,11 +66,16 @@ body{
   text-decoration: none;
 
 }
+
+.headings{
+  color: black;
+}
 .container{
   margin-right: auto;
   margin-left: auto;
   max-width: 1680px;
-  padding: 40px 180px;
+  padding: 80px 180px;
+  text-align: center;
 }
 
 /* media queries */

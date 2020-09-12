@@ -5,6 +5,7 @@ $(document).ready(function(){
 
   let myName = "Siyabonga Webstar Maseko";
   $(".subheading").hide();
+   // $("#navhead").hide();
 function run( ){
   if(i < myName.length){
     $("#name").append(myName.charAt(i));
