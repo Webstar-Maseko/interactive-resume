@@ -65,6 +65,12 @@ hr{
 
 }
 
+.title{
+  margin-top: 7px;
+  padding-top: 40px;
+  font-weight: bolder;
+}
+
 .headings{
   color: black;
 }
