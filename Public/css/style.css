@@ -4,13 +4,7 @@ body{
   margin: 0;
   font-family: 'Play', sans-serif;
 }
-hr{
-  border-style: dotted;
-  border-width: thin;
-  border-color: grey;
 
-
-}
 .alignCenter{
   text-align: center;
 }
@@ -25,14 +19,16 @@ hr{
 
   margin-left: 5rem;
   margin-right: 5rem;
+  padding-bottom: 4rem;
 }
 
 .hColor{
   color: #81b214;
 }
 .land{
-    background-image: url("/images/header.gif");
-    background-position: center;
+    background-image: url("/images/ace.jpg");
+    background-position:left;
+
 }
 .land .container{
   position: relative;
@@ -42,7 +38,8 @@ hr{
 }
 .navbar{
   background-color: black;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   text-align: center;
 
 }
@@ -79,7 +76,8 @@ hr{
   text-align: center;
 }
 .content{
-  padding-left: 33px;
+  padding: 0 20% 5%;
+  text-align: center;
 }
 .dim{
   background-color: #f7f2e7;
@@ -92,8 +90,46 @@ hr{
   max-width: 100%;
   max-height: inherit;
 }
+.pics{
+    width: 100%;
+  background-color: black;
+}
+.footer{
+  background-image: -webkit-linear-gradient(-80deg, #f7f2e7 50%,#9d65c9 50%);
+}
+.links{
+  padding:0.5rem 1rem;
+  color:#2d132c;
+  transition: all .2s;
+}
+
 .unchecked{
   color: white;
+}
+.shots{
+  width: 24.5rem;
+  height: 16rem;
+  padding: 0;
+}
+.shots:hover{
+  transform: scale(1.1);
+}
+.fa:hover{
+  font-size: 140%;
+}
+hr{
+  border-style: dotted;
+  border-width:thin;
+  border-color: grey;
+}
+a{
+  text-decoration: none;
+  color: purple;
+
+}
+
+a:hover{
+  font-size: 120%;
 }
 p{
   display: block;
