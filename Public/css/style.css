@@ -91,7 +91,7 @@ body{
   max-height: inherit;
 }
 .pics{
-    width: 100%;
+  width: 100%;
   background-color: black;
 }
 .footer{
@@ -102,12 +102,21 @@ body{
   color:#2d132c;
   transition: all .2s;
 }
+.newsPic{
+  width: 18rem;
+  height: 12rem;
+  padding: 10px;
+}
+.newsP{
+  font-size: 1rem;
+  padding: 0 10px;
+}
 
 .unchecked{
   color: white;
 }
 .shots{
-  width: 24.5rem;
+  width: 33%;
   height: 16rem;
   padding: 0;
 }
@@ -168,6 +177,11 @@ tr, td{
     display: block ;
     text-align: left;
     float: none;
+  }
+  .shots{
+    width: 100%;
+    height: 16rem;
+    padding: 0;
   }
 
 }

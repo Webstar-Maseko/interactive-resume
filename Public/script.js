@@ -42,6 +42,7 @@ $(document).ready(function() {
         run, 100);
     } else {
       vis(name);
+        $(".subheading").slideDown();
     }
 
   }
@@ -103,8 +104,6 @@ $(document).ready(function() {
       $(".elemBl").removeClass("active");
     }
 
-
-
   });
 
   $("a").click(function(event) {
@@ -116,8 +115,8 @@ $(document).ready(function() {
   $(".icon").click(function() {
 
     if ($("#navhead").hasClass("responsive") === false) {
+    $("#navhead").slideDown();
       $("#navhead").addClass("responsive");
-      console.log("works");
     } else {
 
       $("#navhead").removeClass("responsive");
