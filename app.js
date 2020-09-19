@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+require("dotenv").config();
 const exp = require('express');
 const ejs = require("ejs");
 const request = require("request");
@@ -11,7 +11,7 @@ app.use(exp.static("Public"));
 
 app.get("/", function(req, res){
 
-request("https://newsapi.org/v2/top-headlines?country=za&category=technology&apiKey=1af0effb134140ff8f778fcf3905319f", function(error, response, body){
+request(process.env.APIKEY, function(error, response, body){
   if(!error){
     let data = JSON.parse(body);
     let articles = data.articles;

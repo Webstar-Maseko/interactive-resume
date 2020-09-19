@@ -113,9 +113,7 @@ $(document).ready(function() {
   });
 
   $(".icon").click(function() {
-
     if ($("#navhead").hasClass("responsive") === false) {
-    $("#navhead").slideDown();
       $("#navhead").addClass("responsive");
     } else {
 
