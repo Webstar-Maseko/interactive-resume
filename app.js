@@ -25,6 +25,6 @@ request(process.env.APIKEY, function(error, response, body){
 
 });
 
-app.listen(3000, function(){
+app.listen(Process.env.PORT || 3000, function(){
   console.log("listening on 3000");
 });
