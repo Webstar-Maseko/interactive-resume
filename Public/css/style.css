@@ -30,6 +30,14 @@ body{
     background-position:left;
 
 }
+.anim{
+  width: 100px;
+  height: 120px;
+  background-color: black;
+  padding-top: 10%;
+
+
+}
 .land .container{
   position: relative;
   top: 15%;
@@ -85,6 +93,12 @@ body{
 .row{
   display: flex;
   flex-wrap: wrap;
+}
+.point{
+  padding-top: 20%;
+  border: none;
+  text-decoration: none;
+  color: black;
 }
 #Abilities{
   max-width: 100%;

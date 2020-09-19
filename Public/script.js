@@ -26,6 +26,7 @@ $(document).ready(function() {
 
   let myName = "Siyabonga Webstar Maseko";
   $(".subheading").hide();
+  $(".point").hide();
   // $("#Profile").hide();
   // $("#Abilities").hide();
   // $("#Experience").hide();
@@ -43,6 +44,7 @@ $(document).ready(function() {
     } else {
       vis(name);
         $(".subheading").slideDown();
+        $(".point").slideDown();
     }
 
   }
