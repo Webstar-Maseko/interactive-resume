@@ -1,216 +1,265 @@
-body{
+body {
   color: black;
   font-size: 1.23rem;
   margin: 0;
   font-family: 'Play', sans-serif;
 }
 
-.alignCenter{
+.hbPic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  padding-right: 30px;
+  padding-bottom: 10px;
+}
+
+.fl-left {
+  float: left;
+}
+
+.fl-right {
+  float: right;
+}
+
+.alignCenter {
   text-align: center;
 }
-.profilePic{
-  width: 20rem;
-  height: 20rem;
+
+.profilePic {
+  width: 15rem;
+  height: 15rem;
   border-radius: 50%;
   border-style: double;
-  border-color:brown;
+  border-color: brown;
 }
-.container-fluid{
 
+.container-fluid {
   margin-left: 5rem;
   margin-right: 5rem;
   padding-bottom: 4rem;
 }
 
-.hColor{
+.hColor {
   color: #81b214;
 }
-.land{
-    background-image: url("/images/ace.jpg");
-    background-position:left;
 
+.land {
+  background-image: url("/images/ace.jpg");
+  background-position: left;
 }
-.anim{
+
+.anim {
   width: 100px;
   height: 120px;
   background-color: black;
   padding-top: 10%;
-
-
 }
-.land .container{
+
+.hobbies {
+  padding-bottom: 8rem;
+}
+
+.land .container {
   position: relative;
   top: 15%;
   /* z-index: 4; */
   max-width: 100%;
 }
-.navbar{
+
+.navbar {
   background-color: black;
   position: fixed;
   width: 100%;
   text-align: center;
-
 }
-.navbar .icon{
+
+.navbar .icon {
   display: none;
 }
-.navbar .active{
 
+.navbar .active {
   color: brown;
 }
-.navbar a:hover{
+
+.navbar a:hover {
   background-color: #ddd;
   color: black;
 }
-.navbar a{
+
+.navbar a {
   display: inline-block;
   color: #f2f2f2;
   padding: 14px 16px;
   text-decoration: none;
-
 }
 
-.title{
+.title {
   margin-top: 7px;
   padding-top: 40px;
   font-weight: bolder;
 }
 
-.headings{
+.headings {
   color: black;
 }
-.container{
+
+.container {
   padding: 6% 20%;
   text-align: center;
 }
-.content{
+
+.content {
   padding: 0 20% 5%;
   text-align: center;
 }
-.dim{
+
+.dim {
   background-color: #f7f2e7;
 }
-.row{
+
+.row {
   display: flex;
   flex-wrap: wrap;
 }
-.point{
+
+.point {
   padding-top: 20%;
   border: none;
   text-decoration: none;
   color: black;
 }
-#Abilities{
+
+#Abilities {
   max-width: 100%;
   max-height: inherit;
 }
-.pics{
+
+.pics {
   width: 100%;
   background-color: black;
 }
-.footer{
-  background-image: -webkit-linear-gradient(-80deg, #f7f2e7 50%,#9d65c9 50%);
+
+.footer {
+  background-image: -webkit-linear-gradient(-80deg, #f7f2e7 50%, #9d65c9 50%);
 }
-.links{
-  padding:0.5rem 1rem;
-  color:#2d132c;
+
+.links {
+  padding: 0.5rem 1rem;
+  color: #2d132c;
   transition: all .2s;
 }
-.newsPic{
+
+.newsPic {
   width: 18rem;
   height: 12rem;
   padding: 10px;
 }
-.newsP{
+
+.newsP {
   font-size: 1rem;
   padding: 0 10px;
 }
 
-.unchecked{
+.unchecked {
   color: white;
 }
-.shots{
+
+.shots {
   width: 33%;
   height: 16rem;
   padding: 0;
 }
-.shots:hover{
+
+.shots:hover {
   transform: scale(1.1);
 }
-.fa:hover{
+
+.fa:hover {
   font-size: 140%;
 }
-hr{
+
+hr {
   border-style: dotted;
-  border-width:thin;
+  border-width: thin;
   border-color: grey;
 }
-a{
+
+a {
   text-decoration: none;
   color: purple;
-
 }
 
-a:hover{
+a:hover {
   font-size: 120%;
 }
-p{
-  display: block;
 
+p {
+  display: block;
 }
-h3, h2{
+
+h3, h2 {
   font-weight: 800;
   margin-top: 7px;
+  color: brown;
 }
-table{
-  width : 100%;
 
+table {
+  width: 100%;
 }
-tr, td{
+
+tr, td {
   text-align: left;
   padding: 0.87rem;
 }
 
 /* media queries */
 @media screen and (max-width: 600px) {
-  .navbar a:not(:first-child){display: none;}
-  .navbar a.icon{
+  .navbar a:not(:first-child) {
+    display: none;
+  }
+
+  .navbar a.icon {
     float: right;
     display: block;
   }
-
 }
-@media screen and (max-width: 600px){
-  .navbar.responsive{position: fixed;}
-  .navbar.responsive .icon{
+
+@media screen and (max-width: 600px) {
+  .navbar.responsive {
+    position: fixed;
+  }
+
+  .navbar.responsive .icon {
     position: absolute;
     right: 0;
-    top : 0;
+    top: 0;
   }
-  .navbar.responsive a{
-    display: block ;
+
+  .navbar.responsive a {
+    display: block;
     text-align: left;
     float: none;
   }
-  .shots{
+
+  .shots {
     width: 100%;
     height: 16rem;
     padding: 0;
   }
-
 }
-@media screen and (min-width : 768px){
+
+@media screen and (min-width : 768px) {
   .col-1 {
     float: left;
     flex: 0 0 50%;
-    width : 50%;
-    padding-bottom: 20px;
-  }
-  .col-2 {
-    float: right;
-    flex: 0 0 50%;
-    width : 50%;
+    width: 50%;
     padding-bottom: 20px;
   }
 
+  .col-2 {
+    float: right;
+    flex: 0 0 50%;
+    width: 50%;
+    padding-bottom: 20px;
+  }
 }

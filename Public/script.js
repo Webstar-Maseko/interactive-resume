@@ -89,14 +89,8 @@ $(document).ready(function() {
       $(".elemBl").removeClass("active");
       $(".elemeCont").removeClass("active");
     }
-    if (window.pageYOffset > 5190) {
-      $(".elemBl").addClass("active");
-      $(".elemProf").removeClass("active");
-      $(".elemExp").removeClass("active");
-      $(".elemAbi").removeClass("active");
-      $(".elemAr").removeClass("active");
-      $(".elemeCont").removeClass("active");
-    }
+
+
     if (window.pageYOffset > 5990) {
       $(".elemeCont").addClass("active");
       $(".elemProf").removeClass("active");

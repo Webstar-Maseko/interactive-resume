@@ -17,8 +17,7 @@
     <a class="elemProf" href="#Profile"> Profile</a>
     <a class="elemAbi" href="#Abilities"> Abilities</a>
     <a class="elemExp" href="#Experience"> Experience</a>
-    <a class="elemAr" href="#Art"> Art</a>
-    <a class="elemBl" href="#Blog"> Blog</a>
+    <a class="elemAr" href="#Hobbies"> Hobbies</a>
     <a class="elemeCont" href="#Contact"> Contact</a>
     <a class="icon"> <i class="fa fa-bars"></i> </a>
 
@@ -28,7 +27,7 @@
     <div class="container">
       <h1 class="hColor" id="name"></h1>
       <p class="subheading hColor">interactive resume</p>
-     <a href="#Profile" class="point"> <img  class="anim"src="/images/gif-arrow.gif" alt=""></a>
+      <a href="#Profile" class="point"> <img class="anim" src="/images/gif-arrow.gif" alt=""></a>
     </div>
 
   </div>
@@ -375,7 +374,7 @@
       <div class="col-2">
         <strong class="title"> Bachelor of science in Information Technology</strong>
         <p>The education was focused on various aspects of computer science, this is where I learned programming. I learned various Languages like Java, C#, C++, Asp.net and Python. I was also introduced to data structures and algorithms in Java,
-          databse systems, artificial intelligence, computer networks, system analysis and design, Operating Systems. To name a few.</p>
+          databse systems, Artificial intelligence, computer networks, system analysis and design, Operating Systems. To name a few.</p>
       </div>
 
     </div>
@@ -411,18 +410,42 @@
 
   </div>
   <div class="dim">
-    <div class="container-fluid" id="Art">
+    <div class="container-fluid" id="Hobbies">
       <div class="container">
         <i class="fa fa-paint-brush fa-3x" aria-hidden="true"></i>
-        <h1 class="headings">Art</h1>
+        <h1 class="headings">Hobbies</h1>
         <h4 class="headings">"We are shaped and fashioned by what we love"- Goethe</h4>
-
         <hr>
       </div>
+      <div class="hobbies">
+        <img src="/images/lens.jpg" class="hbPic fl-left" alt="">
+        <h3>Photography</h3>
+        <p>What's better than memories in a box? I love taking potrait pictures and sunset pictures</p>
+      </div>
+      <div class="hobbies">
+        <img src="/images/music.jpg" class="hbPic fl-right" alt="">
+        <h3>Music</h3>
+        <p>The only thing that keeps me from going insane. A day without listening to music is tortue.</p>
 
+      </div>
+      <div class="hobbies">
+        <img src="/images/book.jpg" class="hbPic fl-left" alt="">
+        <h3>Books</h3>
+        <p>Food for thought. On a long day, I like to spend my time reading a good book whether it's fiction or spiritual.</p>
+
+      </div>
+      <div class="hobbies">
+        <img src="/images/mat.jpg" class="hbPic fl-right" alt="">
+        <h3>Skateboarding</h3>
+        <p>I can't ride a bike but that doesn't mean I can't skate. I like to spend time with my friends breaking a few bones and smoking weeeeeeeeeeeeeeeed.</p>
+      </div>
+      <div class="hobbies">
+        <img src="/images/code.png" class="hbPic fl-left" alt="">
+        <h3>Programming</h3>
+        <p>The abiltiy into turn coffee into code. I spend 90% of my time learning new languages and improving my skills in some other languages. I'm trying to turn a hobby into a profession</p>
+      </div>
       <div class="content">
-
-        <p>Taking sunset pictures is one of the things that makes me appreciate the beauty of nature.</p>
+        <hr>
         <strong>Here are some of my sunset pictures:</strong>
       </div>
 
@@ -439,101 +462,7 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid" id="Blog">
-    <div class="container">
-      <h1 class="headings">Blog</h1>
-      <h4 class="headings">Find the latest news in IT</h4>
-      <hr>
-    </div>
-    <div class="row">
-      <div class="col-1">
-        <% for(var i =0; i <1; i++){ %>
-        <% if(articles[i].content != null) { %>
-          <% if(articles[i].urlToImage === null){%>
-            <img src="/images/news.jpg" class="newsPic" alt="image">
-            <%} else{%>
-              <img src="<%=articles[i].urlToImage%>" class="newsPic" alt="image">
-          <%}%>
-        <h4 class="newsP"><%=articles[i].title%></h4>
-        <p class="newsP"><%= articles[i].publishedAt %></p>
-        <p class="newsP"><%=articles[i].content.substring(0,150) + "..."%><a href="<%=articles[i].url %>">Read more</a></p>
 
-        <%}else{%>
-          <div class="container">
-            <h1 class="alignCenter">Could not read data</h1>
-          </div>
-
-         <%} %>
-
-        <%} %>
-
-      </div>
-      <div class="col-2">
-        <% for(var i =2; i <3; i++){ %>
-        <% if(articles[i].content != null) { %>
-          <% if(articles[i].urlToImage === null){%>
-            <img src="/images/news.jpg" class="newsPic" alt="image">
-            <%} else{%>
-
-              <img src="<%=articles[i].urlToImage%>" class="newsPic" alt="image">
-          <%}%>
-        <h4 class="newsP"><%=articles[i].title%></h4>
-        <p class="newsP"><%= articles[i].publishedAt %></p>
-
-        <p class="newsP"><%=articles[i].content.substring(0,150) + "..."%><a href="<%=articles[i].url %>">Read more</a></p>
-
-        <%}else{%>
-          <div class="container">
-            <h1 class="alignCenter"><%=articles[i].message%></h1>
-          </div>
-
-         <%} %>
-
-        <%} %>
-
-      </div>
-
-    </div>
-    <div class="row">
-      <div class="col-1 ">
-        <% for(var i =4; i <5; i++){ %>
-        <% if(articles[i].content != null) { %>
-          <% if(articles[i].urlToImage === null){%>
-            <img src="/images/news.jpg" class="newsPic" alt="image">
-            <%} else{%>
-
-              <img src="<%=articles[i].urlToImage%>" class="newsPic" alt="image">
-          <%}%>
-        <h4 class="newsP"><%=articles[i].title%></h4>
-        <p class="newsP"><%= articles[i].publishedAt %></p>
-        <p class="newsP"><%=articles[i].content.substring(0,150) + "..."%><a href="<%=articles[i].url %>">Read more</a></p>
-
-        <%} %>
-
-        <%} %>
-      </div>
-      <div class="col-2">
-        <% for(var i =6; i <7; i++){ %>
-        <% if(articles[i].content != null) { %>
-          <% if(articles[i].urlToImage === null){%>
-            <img src="/images/news.jpg" class="newsPic" alt="image">
-            <%} else{%>
-
-              <img src="<%=articles[i].urlToImage%>" class="newsPic" alt="image">
-          <%}%>
-        <h4 class="newsP"><%=articles[i].title%></h4>
-        <p class="newsP"><%= articles[i].publishedAt %></p>
-        <p class="newsP"><%=articles[i].content.substring(0,150) + "..."%><a href="<%=articles[i].url %>">Read more</a></p>
-        <%} %>
-
-        <%} %>
-
-      </div>
-
-    </div>
-
-
-  </div>
   <div class="footer" id="Contact">
     <div class="container-fluid">
       <div class="container">
@@ -544,7 +473,7 @@
       <div class="content">
         <h3>Get in touch</h3>
         <p>
-          <a class="links" href="https://www.facebook.com/ace.carter.144"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> </a>
+          <a class="links" href="https://www.facebook.com/ace.cInterestser.144"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> </a>
           <a class="links" href="https://www.twitter.com/Webstar_Maseko"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i> </a>
           <a class="links" href="https://www.instagram.com/webstar_m"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i> </a>
           <a class="links" href="https://www.instagram.com/webstar_m"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i> </a>
