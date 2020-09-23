@@ -133,6 +133,12 @@ body {
   max-width: 100%;
   max-height: inherit;
 }
+.end{
+  padding-top: 20px;
+  font-size: 0.89rem;
+  line-height: 1;
+
+}
 
 .pics {
   width: 100%;
