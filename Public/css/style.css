@@ -229,7 +229,7 @@ tr, td {
 
 /* media queries */
 @media screen and (max-width: 600px) {
-  .navbar a:not(:first-child) {
+  .navbar a:not(:last-child) {
     display: none;
   }
 
