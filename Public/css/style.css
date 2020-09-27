@@ -40,18 +40,19 @@ body {
 }
 
 .hColor {
-  color: #81b214;
+  color: white ;
 }
 
 .land {
-  background-image: url("/images/ace.jpg");
+  background-image:linear-gradient(rgba(0, 60, 50, 0.5), rgba(20, 0, 30, 0.5)), url("/images/ace.jpg");
   background-position: left;
+
 }
 
 .anim {
   width: 100px;
   height: 120px;
-  background-color: black;
+  background-color: transparent;
   padding-top: 10%;
 }
 
@@ -106,11 +107,13 @@ body {
 .container {
   padding: 6% 20%;
   text-align: center;
+
 }
 
 .content {
   padding: 0 20% 5%;
   text-align: center;
+
 }
 
 .dim {
@@ -155,33 +158,27 @@ body {
   transition: all .2s;
 }
 
-.newsPic {
-  width: 18rem;
-  height: 12rem;
-  padding: 10px;
-}
-
-.newsP {
-  font-size: 1rem;
-  padding: 0 10px;
-}
-
-.unchecked {
-  color: white;
-}
-
 .shots {
   width: 49.5%;
   height: 16rem;
   padding: 0;
-}
 
+}
+.hLine{
+  border-style: ridge;
+
+  border-color: #625261;
+
+}
 .shots:hover {
   transform: scale(1.1);
 }
 
 .fa:hover {
   font-size: 140%;
+}
+.iconCl{
+  position: relative;
 }
 
 hr {
@@ -196,11 +193,15 @@ a {
 }
 
 a:hover {
-  font-size: 120%;
+  font-size: 110%;
 }
 
 p {
   display: block;
+}
+table{
+  table-layout: auto;
+  width: 100%;
 }
 
 h3, h2 {
@@ -211,12 +212,20 @@ h3, h2 {
 
 table {
   width: 100%;
+  table-layout: fixed;
 }
 
 tr, td {
   text-align: left;
   padding: 0.87rem;
 }
+
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+
+
 
 /* media queries */
 @media screen and (max-width: 600px) {
@@ -251,6 +260,9 @@ tr, td {
     width: 100%;
     height: 16rem;
     padding: 0;
+  }
+  .icons{
+    width: 60%;
   }
 }
 

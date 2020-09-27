@@ -7,7 +7,7 @@ $(document).ready(function() {
   let ability =  $("#Abilities");
   let exp = $("#Experience");
   let art =  $("#Art");
-  let blog =  $("#Blog");
+  let blog =  $("#Hobbies");
   let contact = $("#Contact");
 
 
@@ -27,12 +27,7 @@ $(document).ready(function() {
   let myName = "Siyabonga Webstar Maseko";
   $(".subheading").hide();
   $(".point").hide();
-  // $("#Profile").hide();
-  // $("#Abilities").hide();
-  // $("#Experience").hide();
-  // $("#Art").hide();
-  // $("#Blog").hide();
-  // $("#Contact").hide();
+    $(".hLine").hide();
   inv(name);
   $("#navhead").hide();
   function run() {
@@ -45,6 +40,7 @@ $(document).ready(function() {
       vis(name);
         $(".subheading").slideDown();
         $(".point").slideDown();
+        $(".hLine").slideDown();
     }
 
   }
