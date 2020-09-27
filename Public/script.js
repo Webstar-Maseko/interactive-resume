@@ -98,15 +98,20 @@ $(document).ready(function() {
 
   });
 
-  $("a").click(function(event) {
+  $("a").click(function() {
     let name = $(this).attr("href");
     $(name).slideDown();
     $(name).focus();
+    if ($("#navhead").hasClass("responsive") === true) {
+      $("#navhead").removeClass("responsive");
+    }
   });
+
 
   $(".icon").click(function() {
     if ($("#navhead").hasClass("responsive") === false) {
       $("#navhead").addClass("responsive");
+
     } else {
 
       $("#navhead").removeClass("responsive");
