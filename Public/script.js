@@ -45,7 +45,23 @@ $(document).ready(function() {
 
   }
   run();
-
+$(".light").click(function(){
+  if($(".light").hasClass("fa-moon-o")){
+    $(".light").removeClass("fa-moon-o");
+    $(".light").addClass("fa-sun-o");
+    $(".tggl").text("light mode");
+    $("body").addClass("dark");
+    $(".dim").addClass("grey");
+    $(".grey").removeClass("dim");
+  }else{
+        $("body").toggleClass("dark");
+        $(".light").removeClass("fa-sun-o");
+        $(".light").addClass("fa-moon-o");
+        $(".tggl").text("dark mode");
+        $(".grey").addClass("dim");
+        $(".dim").removeClass("grey");
+  }
+});
   $(document).scroll(function() {
     if (window.pageYOffset > 550) {
       $("#navhead").slideDown();

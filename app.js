@@ -2,6 +2,7 @@
 require("dotenv").config();
 const exp = require('express');
 const ejs = require("ejs");
+const bp = require("body-parser");
 
 
 const app = exp();
@@ -13,6 +14,10 @@ app.get("/", function(req, res){
     res.render("home.ejs");
 
 });
+app.post("", function(req,res){
+  console.log("posting");
+});
+
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("listening on 3000");
