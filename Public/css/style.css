@@ -105,7 +105,7 @@ body {
 }
 
 .content {
-  padding: 0 20% 5%;
+  /* padding: 0 20% 5%; */
   text-align: center;
 }
 
@@ -295,6 +295,17 @@ border-style: none;
     height: 16rem;
     padding: 0;
   }
+  body{
+    font-size: 1rem;
+  }
+  .container-fluid{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .col-1 .alignCenter{
+float: none;
+  }
+
 }
 
 @media screen and (min-width : 768px) {
@@ -310,6 +321,9 @@ border-style: none;
     flex: 0 0 50%;
     width: 50%;
     padding-bottom: 20px;
+  }
+  .content {
+    padding: 0 20% 5%;
   }
 
 }
