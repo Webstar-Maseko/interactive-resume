@@ -47,7 +47,6 @@ app.post("/", function(req, res) {
     request('https://sv443.net/jokeapi/v2/joke/Pun?blacklistFlags=racist,sexist&type=single', function(error, response, body) {
       if (!error) {
         attrib = JSON.parse(body);
-        console.log(attrib);
       } else {
         attrib = error;
       }

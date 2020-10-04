@@ -14,7 +14,19 @@ body {
   font-size: 1.7rem;
   color: black;
 }
+.wrapper{
+  display: none;
+}
+.loader{
 
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+}
 .hbPic {
   width: 180px;
   height: 180px;
@@ -183,6 +195,14 @@ body {
   border-style: ridge;
   border-color: #625261;
 }
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
 
 .shots:hover {
   transform: scale(1.1);
@@ -312,6 +332,9 @@ border-style: none;
     margin-left: 1rem;
     margin-right: 1rem;
   }
+  .row{
+    display: block;
+  }
 
 }
 
@@ -333,4 +356,27 @@ border-style: none;
     padding: 0 20% 5%;
   }
 
+}
+/* Key frames */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); color: black;}
+  30% { -webkit-transform: rotate(90deg); color: blue;}
+  60% { -webkit-transform: rotate(120deg);color: brown; }
+  75% { -webkit-transform: rotate(180deg); color: green; }
+  100% { -webkit-transform: rotate(360deg);color: orange; }
+}
+
+/* @keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  30% { -webkit-transform: rotate(90deg); }
+  60% { -webkit-transform: rotate(120deg); }
+} */
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
 }

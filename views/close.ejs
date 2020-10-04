@@ -3,15 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>feedback</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Play&family=Raleway:ital,wght@1,300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body>
-    <div class="center">
-      <h1 class="feedback"><%=resp%></h1>
-      <br>
-      <h4>Here's a random joke for you:</h3>
-      <p><%=attrib.joke%></p>
+  <body onload="myFunction">
 
+    <div class="loader">
+      <img src="/images/480.gif" alt="">
+      <p class="move">loading</p>
     </div>
+    <div class="wrapper animate-bottom">
+      <div class="center">
+        <h1 class="feedback"><%=resp%></h1>
+        <br>
+        <h4>Here's a random joke for you:</h3>
+        <p><%=attrib.joke%></p>
+
+      </div>
+    </div>
+
+      <script src="script.js" charset="utf-8"></script>
   </body>
 </html>
