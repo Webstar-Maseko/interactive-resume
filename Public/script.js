@@ -1,24 +1,48 @@
 //jshint esversion:6
 $(document).ready(function() {
-
   let i = 0;
-
-  let profile =  $("#Profile");
-  let ability =  $("#Abilities");
+  let profile = $("#Profile");
+  let ability = $("#Abilities");
   let exp = $("#Experience");
-  let art =  $("#Art");
-  let blog =  $("#Hobbies");
+  let art = $("#Art");
+  let blog = $("#Hobbies");
   let contact = $("#Contact");
+  let darkMode = localStorage.getItem("darkMode");
 
 
+  const enableDarkMode = function() {
+    $(".light").removeClass("fa-moon-o");
+    $(".light").addClass("fa-sun-o");
+    $(".tggl").text("light mode");
+    $("body").addClass("dark");
+    $(".grey").removeClass("dim");
+    $(".dim").addClass("grey");
+    localStorage.setItem("darkMode", 'set');
+  };
+
+  const disableDark = function() {
+    $("body").toggleClass("dark");
+    $(".light").removeClass("fa-sun-o");
+    $(".light").addClass("fa-moon-o");
+    $(".tggl").text("dark mode");
+    $(".grey").addClass("dim");
+    $(".dim").removeClass("grey");
+    localStorage.setItem("darkMode", null);
+
+  };
+  if (darkMode === 'set') {
+    enableDarkMode();
+  }
   let name = [profile, ability, exp, art, blog, contact];
-  function inv(name){
-    $(name).each(function(){
+
+  function inv(name) {
+    $(name).each(function() {
       $(this).hide();
     });
   }
-  function vis(name){
-    $(name).each(function(){
+
+  function vis(name) {
+    $(name).each(function() {
       $(this).slideDown();
     });
   }
@@ -27,9 +51,10 @@ $(document).ready(function() {
   let myName = "Siyabonga Webstar Maseko";
   $(".subheading").hide();
   $(".point").hide();
-    $(".hLine").hide();
+  $(".hLine").hide();
   inv(name);
   $("#navhead").hide();
+
   function run() {
     if (i < myName.length) {
       $("#name").append(myName.charAt(i));
@@ -38,30 +63,22 @@ $(document).ready(function() {
         run, 100);
     } else {
       vis(name);
-        $(".subheading").slideDown();
-        $(".point").slideDown();
-        $(".hLine").slideDown();
+      $(".subheading").slideDown();
+      $(".point").slideDown();
+      $(".hLine").slideDown();
     }
 
   }
+
   run();
-$(".light").click(function(){
-  if($(".light").hasClass("fa-moon-o")){
-    $(".light").removeClass("fa-moon-o");
-    $(".light").addClass("fa-sun-o");
-    $(".tggl").text("light mode");
-    $("body").addClass("dark");
-    $(".dim").addClass("grey");
-    $(".grey").removeClass("dim");
-  }else{
-        $("body").toggleClass("dark");
-        $(".light").removeClass("fa-sun-o");
-        $(".light").addClass("fa-moon-o");
-        $(".tggl").text("dark mode");
-        $(".grey").addClass("dim");
-        $(".dim").removeClass("grey");
-  }
-});
+  $(".light").click(function() {
+    darkMode = localStorage.getItem("darkMode");
+    if (darkMode !== 'set') {
+      enableDarkMode();
+    } else {
+      disableDark();
+    }
+  });
   $(document).scroll(function() {
     if (window.pageYOffset > 550) {
       $("#navhead").slideDown();
@@ -71,9 +88,7 @@ $(".light").click(function(){
       $(".elemBl").removeClass("active");
       $(".elemeCont").removeClass("active");
       $(".elemExp").removeClass("active");
-    }
-
-     else {
+    } else {
       $("#navhead").hide();
     }
     if (window.pageYOffset > 1490) {
@@ -85,7 +100,7 @@ $(".light").click(function(){
       $(".elemExp").removeClass("active");
 
     }
-    if (window.pageYOffset > 2820) {
+    if (window.pageYOffset > 2800) {
       $(".elemExp").addClass("active");
       $(".elemProf").removeClass("active");
       $(".elemAr").removeClass("active");
@@ -93,7 +108,7 @@ $(".light").click(function(){
       $(".elemBl").removeClass("active");
       $(".elemeCont").removeClass("active");
     }
-    if (window.pageYOffset > 3890) {
+    if (window.pageYOffset > 3860) {
       $(".elemAr").addClass("active");
       $(".elemProf").removeClass("active");
       $(".elemExp").removeClass("active");

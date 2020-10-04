@@ -4,6 +4,16 @@ body {
   margin: 0;
   font-family: 'Play', sans-serif;
 }
+.center{
+  margin: auto;
+  width: 50%;
+  padding-top: 15% ;
+  text-align: center;
+}
+.feedback{
+  font-size: 1.7rem;
+  color: black;
+}
 
 .hbPic {
   width: 180px;
@@ -200,7 +210,7 @@ input, textarea {
   color: inherit;
   box-sizing: border-box;
   padding: 10px 5px;
-  font-size: 1.4rem;
+  font-size: inherit;
   border-style: none;
 }
 
@@ -301,9 +311,6 @@ border-style: none;
   .container-fluid{
     margin-left: 1rem;
     margin-right: 1rem;
-  }
-  .col-1 .alignCenter{
-float: none;
   }
 
 }
