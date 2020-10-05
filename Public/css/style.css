@@ -12,7 +12,7 @@ body {
 }
 .feedback{
   font-size: 1.7rem;
-  color: black;
+  color: inheri;
 }
 .wrapper{
   display: none;
@@ -78,7 +78,7 @@ body {
 }
 
 .hobbies {
-  padding-bottom: 8rem;
+  padding-bottom: 5rem;
 }
 
 .land .container {
@@ -213,10 +213,21 @@ span:hover {
 }
 
 hr {
-  border-style: dotted;
-  border-width: thin;
-  border-color: grey;
+  border: 0;
+  margin: 1.35em auto;
+  max-width: 100%;
+  background-position: 50%;
+  box-sizing: border-box;
+
+  height: 20px;
+  width: 60%;
+  background-image: radial-gradient(
+    farthest-side at 50% -50%,
+    hsla(81, 62%, 47%, 0.53),
+    hsla(0, 0%, 0%, 0));
+  position: relative;
 }
+
 
 a {
   text-decoration: none;
@@ -358,19 +369,7 @@ border-style: none;
 
 }
 /* Key frames */
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); color: black;}
-  30% { -webkit-transform: rotate(90deg); color: blue;}
-  60% { -webkit-transform: rotate(120deg);color: brown; }
-  75% { -webkit-transform: rotate(180deg); color: green; }
-  100% { -webkit-transform: rotate(360deg);color: orange; }
-}
 
-/* @keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  30% { -webkit-transform: rotate(90deg); }
-  60% { -webkit-transform: rotate(120deg); }
-} */
 @-webkit-keyframes animatebottom {
   from { bottom:-100px; opacity:0 }
   to { bottom:0px; opacity:1 }

@@ -4,8 +4,8 @@ const exp = require('express');
 const ejs = require("ejs");
 const bp = require("body-parser");
 const request = require("request");
-const nodemailer = require("nodemailer");
-
+const mailgun = require("mailgun-js");
+const mg = mailgun({apiKey: process.env.APIKEY, domain: process.env.DOMAIN});
 
 const app = exp();
 app.set("view engine", "ejs");
@@ -14,15 +14,6 @@ app.use(bp.urlencoded({
   extended: true
 }));
 
-const transport = nodemailer.createTransport({
-  host: "smtp.sendgrid.net",
-  port: 465,
-  secure: true,
-  auth: {
-    user: 'apikey',
-    pass: process.env.APIKEY
-  }
-});
 
 
 app.get("/", function(req, res) {
@@ -30,19 +21,22 @@ app.get("/", function(req, res) {
 
 });
 app.post("/", function(req, res) {
-
-  transport.sendMail({
+  const data = {
     from: req.body.email,
-    to: "webstarsiyabonga@gmail.com",
+    to: "30089662@g.nwu.ac.za" ,
     subject: req.body.subject,
     text: req.body.message
-  }, function(err, data) {
+  };
+
+  mg.messages().send(data, function(err, body) {
     let resp;
     if (err) {
       resp = err.response;
+
     } else {
       resp = "Message sent successfully, I'll be in touch";
     }
+
     let attrib;
     request('https://sv443.net/jokeapi/v2/joke/Pun?blacklistFlags=racist,sexist&type=single', function(error, response, body) {
       if (!error) {
