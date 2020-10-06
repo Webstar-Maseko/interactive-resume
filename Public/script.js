@@ -1,157 +1,172 @@
 //jshint esversion:6
 
-$(window).on("load", function(){
-  function load(){
-    $(".loader").css("display","none");
-    $(".wrapper").css("display","block");
+$(window).on("load", function() {
+  function load() {
+    $(".loader").css("display", "none");
+    $(".wrapper").css("display", "block");
 
-      //loade = setTimeout(load, 6000);
   }
-  //load();
-  setTimeout(load,3000);
-    console.log("loading");
-    let i = 0;
-    let profile = $("#Profile");
-    let ability = $("#Abilities");
-    let exp = $("#Experience");
-    let art = $("#Art");
-    let blog = $("#Hobbies");
-    let contact = $("#Contact");
-    let darkMode = localStorage.getItem("darkMode");
+  setTimeout(load, 2000);
+  let profile = $("#Profile");
+  let ability = $("#Abilities");
+  let exp = $("#Experience");
+  let hobby = $("#Hobbies");
+  let contact = $("#Contact");
+  let darkMode = localStorage.getItem("darkMode");
 
 
-    const enableDarkMode = function() {
-      $(".light").removeClass("fa-moon-o");
-      $(".light").addClass("fa-sun-o");
-      $(".tggl").text("light mode");
-      $("body").addClass("dark");
-      $(".grey").removeClass("dim");
-      $(".dim").addClass("grey");
-      localStorage.setItem("darkMode", 'set');
-    };
+  const enableDarkMode = function() {
+    $(".light").removeClass("fa-moon-o");
+    $(".light").addClass("fa-sun-o");
+    $(".tggl").text("light mode");
+    $("body").addClass("dark");
+    $(".grey").removeClass("dim");
+    $(".dim").addClass("grey");
+    localStorage.setItem("darkMode", 'set');
+  };
 
-    const disableDark = function() {
-      $("body").toggleClass("dark");
-      $(".light").removeClass("fa-sun-o");
-      $(".light").addClass("fa-moon-o");
-      $(".tggl").text("dark mode");
-      $(".grey").addClass("dim");
-      $(".dim").removeClass("grey");
-      localStorage.setItem("darkMode", null);
+  const disableDark = function() {
+    $("body").toggleClass("dark");
+    $(".light").removeClass("fa-sun-o");
+    $(".light").addClass("fa-moon-o");
+    $(".tggl").text("dark mode");
+    $(".grey").addClass("dim");
+    $(".dim").removeClass("grey");
+    localStorage.setItem("darkMode", null);
 
-    };
-    if (darkMode === 'set') {
+  };
+  if (darkMode === 'set') {
+    enableDarkMode();
+  }
+  let name = [profile, ability, exp, hobby, contact];
+
+  function inv(name) {
+    $(name).each(function() {
+      $(this).hide();
+    });
+  }
+
+  function vis(name) {
+    $(name).each(function() {
+      $(this).slideDown();
+    });
+  }
+
+  $(".subheading").hide();
+  $(".point").hide();
+  $(".hLine").hide();
+  inv(name);
+  $("#navhead").hide();
+
+  function run() {
+    vis(name);
+    $(".subheading").slideDown();
+    $(".point").slideDown();
+    $(".hLine").slideDown();
+
+  }
+
+  run();
+  $(".light").click(function() {
+    darkMode = localStorage.getItem("darkMode");
+    if (darkMode !== 'set') {
       enableDarkMode();
+    } else {
+      disableDark();
     }
-    let name = [profile, ability, exp, art, blog, contact];
+  });
 
-    function inv(name) {
-      $(name).each(function() {
-        $(this).hide();
-      });
-    }
-
-    function vis(name) {
-      $(name).each(function() {
-        $(this).slideDown();
-      });
-    }
+  $(document).on("scroll", function() {
+    scroll_pos_top = $(window).scrollTop();
+    prof = $(profile).offset().top ;
+    ele_exp = $(exp).offset().top;
+    ele_ab = $(ability).offset().top  ;
+    ele_hob = $(hobby).offset().top;
+    ele_cont = $(contact).offset().top ;
 
 
-    let myName = "Siyabonga Webstar Maseko";
-    $(".subheading").hide();
-    $(".point").hide();
-    $(".hLine").hide();
-    inv(name);
-    $("#navhead").hide();
 
-    function run() {
-        vis(name);
-        $(".subheading").slideDown();
-        $(".point").slideDown();
-        $(".hLine").slideDown();
+
+    if ( scroll_pos_top >= (prof-95) ) {
+      $("#navhead").slideDown();
+      $(".elemProf").addClass('active');
+      $(".elemAr").removeClass("active");
+      $(".elemAbi").removeClass("active");
+      $(".elemeCont").removeClass("active");
+      $(".elemExp").removeClass("active");
+
+    } else {
+      $("#navhead").fadeOut();
 
     }
 
-    run();
-    $(".light").click(function() {
-      darkMode = localStorage.getItem("darkMode");
-      if (darkMode !== 'set') {
-        enableDarkMode();
-      } else {
-        disableDark();
-      }
-    });
-    $(document).scroll(function() {
-      if (window.pageYOffset > 550) {
-        $("#navhead").slideDown();
-        $(".elemProf").addClass("active");
-        $(".elemAr").removeClass("active");
-        $(".elemAbi").removeClass("active");
-        $(".elemBl").removeClass("active");
-        $(".elemeCont").removeClass("active");
-        $(".elemExp").removeClass("active");
-      } else {
-        $("#navhead").hide();
-      }
-      if (window.pageYOffset > 1490) {
-        $(".elemAbi").addClass("active");
-        $(".elemProf").removeClass("active");
-        $(".elemAr").removeClass("active");
-        $(".elemBl").removeClass("active");
-        $(".elemeCont").removeClass("active");
-        $(".elemExp").removeClass("active");
+    if (scroll_pos_top >= ele_ab) {
 
-      }
-      if (window.pageYOffset > 2800) {
-        $(".elemExp").addClass("active");
-        $(".elemProf").removeClass("active");
-        $(".elemAr").removeClass("active");
-        $(".elemAbi").removeClass("active");
-        $(".elemBl").removeClass("active");
-        $(".elemeCont").removeClass("active");
-      }
-      if (window.pageYOffset > 3860) {
-        $(".elemAr").addClass("active");
-        $(".elemProf").removeClass("active");
-        $(".elemExp").removeClass("active");
-        $(".elemAbi").removeClass("active");
-        $(".elemBl").removeClass("active");
-        $(".elemeCont").removeClass("active");
-      }
+      $(".elemAbi").addClass('active');
+      $(".elemProf").removeClass("active");
+      $(".elemAr").removeClass("active");
+      $(".elemeCont").removeClass("active");
+      $(".elemExp").removeClass("active");
 
+    }
+    if (scroll_pos_top >= ele_exp) {
 
-      if (window.pageYOffset > 5990) {
-        $(".elemeCont").addClass("active");
-        $(".elemProf").removeClass("active");
-        $(".elemExp").removeClass("active");
-        $(".elemAbi").removeClass("active");
-        $(".elemAr").removeClass("active");
-        $(".elemBl").removeClass("active");
-      }
+      $(".elemExp").addClass('active');
+      $(".elemProf").removeClass("active");
+      $(".elemAr").removeClass("active");
+      $(".elemAbi").removeClass("active");
+      $(".elemeCont").removeClass("active");
+      $('.col-2').addClass("animate__animated animate__lightSpeedInRight");
+      $('.col-1').addClass("animate__animated animate__lightSpeedInLeft");
+      console.log("we are here");
+    }
+    else{
+      $('.col-2').removeClass("animate__animated animate__lightSpeedInRight");
+      $('.col-1').removeClass("animate__animated animate__lightSpeedInLeft");
+    }
 
-    });
+    if (scroll_pos_top >= ele_hob) {
 
-    $("a").click(function() {
-      let name = $(this).attr("href");
-      $(name).slideDown();
-      $(name).focus();
-      if ($("#navhead").hasClass("responsive") === true) {
-        $("#navhead").removeClass("responsive");
-      }
-    });
+      $(".elemAr").addClass('active');
+      $(".elemProf").removeClass("active");
+      $(".elemExp").removeClass("active");
+      $(".elemAbi").removeClass("active");
+      $(".elemeCont").removeClass("active");
+      $(".hobbies").addClass("animate__animated animate__fadeInTopLeft");
+    }
+    else{
+      $(".hobbies").removeClass("animate__animated animate__fadeInTopLeft");
+    }
+    if (scroll_pos_top >= ele_cont) {
+
+      $(".elemeCont").addClass('active');
+      $(".elemProf").removeClass("active");
+      $(".elemExp").removeClass("active");
+      $(".elemAbi").removeClass("active");
+      $(".elemAr").removeClass("active");
+      $(".elemBl").removeClass("active");
+      $("form").addClass("animate__animated animate__fadeInTopLeft");
+
+    }
+
+  });
 
 
-    $(".icon").click(function() {
-      if ($("#navhead").hasClass("responsive") ) {
-        $("#navhead").removeClass("responsive");
+  $("a").click(function() {
+    let name = $(this).attr("href");
+    $(name).slideDown();
+    $(name).focus();
+    if ($("#navhead").hasClass("responsive") === true) {
+      $("#navhead").removeClass("responsive");
+    }
+  });
 
-      } else {
-        $("#navhead").addClass("responsive");
-      }
-    });
-});
-$(document).ready(function() {
-  console.log("loaded");
+  $(".icon").click(function() {
+    if ($("#navhead").hasClass("responsive")) {
+      $("#navhead").removeClass("responsive");
 
+    } else {
+      $("#navhead").addClass("responsive");
+    }
+  });
 });
