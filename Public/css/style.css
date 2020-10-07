@@ -1,8 +1,12 @@
 body {
-  color: black;
+  color: #2f3e46;
   font-size: 1.23rem;
   margin: 0;
-  font-family: 'Play', sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+.move{
+  animation: color-tog 1s infinite;
+  font-weight: bolder;
 }
 .center{
   margin: auto;
@@ -48,8 +52,8 @@ body {
 }
 
 .profilePic {
-  width: 16rem;
-  height: 16rem;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   border-style: double;
   border-color: brown;
@@ -66,7 +70,7 @@ body {
 }
 
 .land {
-  background-image: linear-gradient(rgba(0, 60, 50, 0.5), rgba(20, 0, 30, 0.5)), url("/images/ace.jpg");
+  background-image: linear-gradient(rgba(20, 0, 30, 0.5), rgba(20, 0, 30, 0.5)), url("/images/ace.jpg");
   background-position: left;
 }
 
@@ -162,20 +166,21 @@ body {
 }
 
 .pics {
-  width: 100%;
-  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .footer {
-  background-image: -webkit-linear-gradient(-80deg, #141010 50%, #313131 50%);
-  color: #616f39;
+  background-image: -webkit-linear-gradient(-80deg, #212529 50%, #343a40 50%);
+  color: #6c757d;;
 }
 .dark {
-  background-color: #141010;
-  color:  #616f39;
+  background-color: #212529;
+  color:  #6c757d;
 }
 .grey{
-    background-color:  #313131;
+    background-color:  #343a40;
+    color:  #6c757d;
 }
 
 .links {
@@ -188,9 +193,14 @@ body {
 }
 
 .shots {
-  width: 49.5%;
-  height: 16rem;
-  padding: 0;
+  flex: 33.33%;
+  max-width: 33.33%;
+
+}
+.shots img{
+
+  vertical-align: middle;
+  width:100%;
 }
 
 
@@ -207,7 +217,7 @@ body {
 }
 
 
-.shots:hover {
+img:hover {
   transform: scale(1.03);
 }
 
@@ -222,11 +232,11 @@ hr {
   background-position: 50%;
   box-sizing: border-box;
 
-  height: 20px;
+  height: 10px;
   width: 60%;
   background-image: radial-gradient(
     farthest-side at 50% -50%,
-    hsla(81, 62%, 47%, 0.53),
+    #89b0ae,
     hsla(0, 0%, 0%, 0));
   position: relative;
 }
@@ -234,7 +244,7 @@ hr {
 
 a {
   text-decoration: none;
-  color: purple;
+  color: #a278b5;
 }
 
 input, textarea {
@@ -256,11 +266,11 @@ button {
   width: 80px;
   height: 2.5rem;
   background-color: transparent;
-  color: #616f39;
+  color:  white;
   font-size: 1.3rem;
 }
 button:hover{
-  background-color: #122d42;
+  background-color: #3d5a80;
 }
 
 p {
@@ -274,10 +284,15 @@ table {
   table-layout: auto;
   width: 100%;
 }
+h3,h4{
+  font-weight: 600;
+}
 
 h3, h2 {
-  font-weight: 800;
   margin-top: 7px;
+}
+h2,h1{
+  font-weight: 900;
 }
 
 table {
@@ -292,10 +307,12 @@ tr, td {
 
 .tggl{
   font-size: 0.8rem;
+
 }
 .anch{
 border-style: none;
   width: 100px;
+  color: inherit;
 }
 .anch:hover{
   font-size: 120%;
@@ -335,9 +352,9 @@ border-style: none;
   }
 
   .shots {
-    width: 100%;
-    height: 16rem;
-    padding: 0;
+    flex: 100%;
+    max-width: 100%;
+
   }
   body{
     font-size: 1rem;
@@ -385,4 +402,20 @@ border-style: none;
 @keyframes animatebottom {
   from{ bottom:-100px; opacity:0 }
   to{ bottom:0; opacity:1 }
+}
+@keyframes color-tog {
+    0% { color: #f72585; }
+    25%{ color : #7209b7 ;}
+    50% { color: #33415c; }
+    75% { color : #fb8500 ;}
+    100% { color: #8ecae6; }
+
+}
+@-webkit-keyframes color-tog {
+  0% { color: #f72585; }
+  25%{ color : #7209b7 ;}
+  50% { color: #33415c; }
+  75% { color : #fb8500 ;}
+  100% { color: #8ecae6; }
+
 }

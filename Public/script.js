@@ -24,7 +24,9 @@ $(window).on("load", function() {
     $(".dim").addClass("grey");
     localStorage.setItem("darkMode", 'set');
   };
+  var moveUp = function(name, size){
 
+  };
   const disableDark = function() {
     $("body").toggleClass("dark");
     $(".light").removeClass("fa-sun-o");
@@ -116,14 +118,9 @@ $(window).on("load", function() {
       $(".elemAr").removeClass("active");
       $(".elemAbi").removeClass("active");
       $(".elemeCont").removeClass("active");
-      $('.col-2').addClass("animate__animated animate__lightSpeedInRight");
-      $('.col-1').addClass("animate__animated animate__lightSpeedInLeft");
-      console.log("we are here");
+
     }
-    else{
-      $('.col-2').removeClass("animate__animated animate__lightSpeedInRight");
-      $('.col-1').removeClass("animate__animated animate__lightSpeedInLeft");
-    }
+
 
     if (scroll_pos_top >= ele_hob) {
 
@@ -132,10 +129,6 @@ $(window).on("load", function() {
       $(".elemExp").removeClass("active");
       $(".elemAbi").removeClass("active");
       $(".elemeCont").removeClass("active");
-      $(".hobbies").addClass("animate__animated animate__fadeInTopLeft");
-    }
-    else{
-      $(".hobbies").removeClass("animate__animated animate__fadeInTopLeft");
     }
     if (scroll_pos_top >= ele_cont) {
 
@@ -145,7 +138,6 @@ $(window).on("load", function() {
       $(".elemAbi").removeClass("active");
       $(".elemAr").removeClass("active");
       $(".elemBl").removeClass("active");
-      $("form").addClass("animate__animated animate__fadeInTopLeft");
 
     }
 
@@ -154,8 +146,9 @@ $(window).on("load", function() {
 
   $("a").click(function() {
     let name = $(this).attr("href");
-    $(name).slideDown();
+    $(name).addClass("animate-bottom");
     $(name).focus();
+      setTimeout($(name).removeClass("animate-bottom"), 2000);
     if ($("#navhead").hasClass("responsive") === true) {
       $("#navhead").removeClass("responsive");
     }
