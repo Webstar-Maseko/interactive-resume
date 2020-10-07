@@ -148,7 +148,6 @@ $(window).on("load", function() {
     let name = $(this).attr("href");
     $(name).addClass("animate-bottom");
     $(name).focus();
-      setTimeout($(name).removeClass("animate-bottom"), 2000);
     if ($("#navhead").hasClass("responsive") === true) {
       $("#navhead").removeClass("responsive");
     }
