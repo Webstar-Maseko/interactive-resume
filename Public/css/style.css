@@ -166,6 +166,7 @@ body {
 }
 
 .pics {
+
   display: flex;
   flex-wrap: wrap;
 }
@@ -355,6 +356,9 @@ border-style: none;
     flex: 100%;
     max-width: 100%;
 
+  }
+  .pics{
+    padding-top: 10px;
   }
   body{
     font-size: 1rem;
