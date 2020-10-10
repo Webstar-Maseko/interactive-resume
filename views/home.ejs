@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Webstar Maseko">
@@ -30,12 +29,12 @@
     <p class="move">loading...</p>
   </div>
   <div class="wrapper animate-bottom">
-
     <div class="navbar" id="navhead">
       <a class="elemProf" href="#Profile"> Profile</a>
       <a class="elemAbi" href="#Abilities"> Abilities</a>
       <a class="elemExp" href="#Experience"> Experience</a>
       <a class="elemAr" href="#Hobbies"> Hobbies</a>
+      <a href="#Dev" class="elemDev" >Dev Sect</a>
       <a class="elemeCont" href="#Contact"> Contact</a>
       <button class="anch" type="button" name="button"><i class="light fa fa-moon-o" aria-hidden="true"><i class="tggl"> dark mode</i> </i></button> </a>
       <a class="icon"> <i class="fa fa-bars"></i> </a>
@@ -105,8 +104,8 @@
       </div>
     </div>
 
-    <div class="dim">
-      <div class="container-fluid" id="Abilities">
+    <div class="dim"  id="Abilities">
+      <div class="container-fluid">
         <div class="container">
           <i class="fa fa-balance-scale fa-3x" aria-hidden="true"></i>
           <h1>Abilities</h1>
@@ -434,8 +433,8 @@
       </div>
 
     </div>
-    <div class="dim">
-      <div class="container-fluid" id="Hobbies">
+    <div class="dim" id="Hobbies">
+      <div class="container-fluid" >
         <div class="container">
           <i class="fa fa-paint-brush fa-3x" aria-hidden="true"></i>
           <h1>Hobbies</h1>
@@ -489,8 +488,6 @@
             <img src="/images/projX0.jpg" alt="img">
             <img src="/images/sun3.jpg" alt="img">
 
-
-
           </div>
           <div class="shots">
             <img src="/images/sun2.jpg" alt="img">
@@ -499,6 +496,21 @@
 
         </div>
       </div>
+    </div>
+    <div class="" id="Dev">
+      <div class="container-fluid">
+        <div class="container">
+          <h1>Developer section</h1>
+          <h4>Find what other developers are saying on twitter</h4>
+        </div>
+        <div class="row">
+            <h3> <%=data.text%></h3>
+
+        </div>
+
+      </div>
+
+
     </div>
 
     <div class="footer" id="Contact">
@@ -538,6 +550,7 @@
 
         </div>
       </div>
+
 
     </div>
   </div>

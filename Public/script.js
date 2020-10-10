@@ -12,6 +12,7 @@ $(window).on("load", function() {
   let exp = $("#Experience");
   let hobby = $("#Hobbies");
   let contact = $("#Contact");
+  let dev = $("#Dev");
   let darkMode = localStorage.getItem("darkMode");
 
 
@@ -42,33 +43,8 @@ $(window).on("load", function() {
   }
   let name = [profile, ability, exp, hobby, contact];
 
-  function inv(name) {
-    $(name).each(function() {
-      $(this).hide();
-    });
-  }
-
-  function vis(name) {
-    $(name).each(function() {
-      $(this).slideDown();
-    });
-  }
-
-  $(".subheading").hide();
-  $(".point").hide();
-  $(".hLine").hide();
-  inv(name);
   $("#navhead").hide();
 
-  function run() {
-    vis(name);
-    $(".subheading").slideDown();
-    $(".point").slideDown();
-    $(".hLine").slideDown();
-
-  }
-
-  run();
   $(".light").click(function() {
     darkMode = localStorage.getItem("darkMode");
     if (darkMode !== 'set') {
@@ -85,69 +61,90 @@ $(window).on("load", function() {
     ele_ab = $(ability).offset().top  ;
     ele_hob = $(hobby).offset().top;
     ele_cont = $(contact).offset().top ;
+    ele_dev = dev.offset().top;
 
 
-
-
-    if ( scroll_pos_top >= (prof-95) ) {
+    if ( scroll_pos_top > (prof-95) ) {
       $("#navhead").slideDown();
       $(".elemProf").addClass('active');
       $(".elemAr").removeClass("active");
       $(".elemAbi").removeClass("active");
       $(".elemeCont").removeClass("active");
       $(".elemExp").removeClass("active");
+      $(".elemDev").removeClass('active');
 
     } else {
       $("#navhead").fadeOut();
 
     }
 
-    if (scroll_pos_top >= ele_ab) {
+    if (scroll_pos_top > (ele_ab -200)) {
 
       $(".elemAbi").addClass('active');
       $(".elemProf").removeClass("active");
       $(".elemAr").removeClass("active");
       $(".elemeCont").removeClass("active");
       $(".elemExp").removeClass("active");
+      $(".elemDev").removeClass('active');
 
     }
-    if (scroll_pos_top >= ele_exp) {
+    if (scroll_pos_top > (ele_exp -200)) {
 
       $(".elemExp").addClass('active');
       $(".elemProf").removeClass("active");
       $(".elemAr").removeClass("active");
       $(".elemAbi").removeClass("active");
       $(".elemeCont").removeClass("active");
+      $(".elemDev").removeClass('active');
 
     }
 
 
-    if (scroll_pos_top >= ele_hob) {
+    if (scroll_pos_top > (ele_hob -200)) {
 
       $(".elemAr").addClass('active');
       $(".elemProf").removeClass("active");
       $(".elemExp").removeClass("active");
       $(".elemAbi").removeClass("active");
       $(".elemeCont").removeClass("active");
+      $(".elemDev").removeClass('active');
     }
-    if (scroll_pos_top >= ele_cont) {
+    if(scroll_pos_top > (ele_dev -200)){
+      $(".elemDev").addClass('active');
+      $(".elemProf").removeClass("active");
+      $(".elemExp").removeClass("active");
+      $(".elemAbi").removeClass("active");
+      $(".elemAr").removeClass("active");
+      $(".elemBl").removeClass("active");
+      $(".elemeCont").removeClass('active');
 
+    }
+
+    if (scroll_pos_top > (ele_cont -200)) {
       $(".elemeCont").addClass('active');
       $(".elemProf").removeClass("active");
       $(".elemExp").removeClass("active");
       $(".elemAbi").removeClass("active");
       $(".elemAr").removeClass("active");
       $(".elemBl").removeClass("active");
+      $(".elemDev").removeClass('active');
 
     }
+
 
   });
 
 
   $("a").click(function() {
     let name = $(this).attr("href");
-    $(name).addClass("animate-bottom");
-    $(name).focus();
+    //$(name).addClass("animate-bottom");
+    //$(name).focus();
+    // if(name.hasClass("active")){
+    //   name.removeClass("active");
+    // }
+    // else{
+    //   name.addClass("active");
+    //}
     if ($("#navhead").hasClass("responsive") === true) {
       $("#navhead").removeClass("responsive");
     }
