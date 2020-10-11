@@ -34,7 +34,7 @@
       <a class="elemAbi" href="#Abilities"> Abilities</a>
       <a class="elemExp" href="#Experience"> Experience</a>
       <a class="elemAr" href="#Hobbies"> Hobbies</a>
-      <a href="#Dev" class="elemDev" >Dev Sect</a>
+      <a href="#Dev" class="elemDev" >Blog</a>
       <a class="elemeCont" href="#Contact"> Contact</a>
       <button class="anch" type="button" name="button"><i class="light fa fa-moon-o" aria-hidden="true"><i class="tggl"> dark mode</i> </i></button> </a>
       <a class="icon"> <i class="fa fa-bars"></i> </a>
@@ -113,7 +113,21 @@
           <hr>
 
         </div>
-        <h2 class="alignCenter">Skills</h2>
+        <h2 class="alignCenter">Soft skills</h2>
+        <div class="row">
+          <div class="col-1 ">
+            <p>flexibility</p>
+            <p>Adaptability</p>
+            <p>Responsibility</p>
+          </div>
+          <div class="col-2">
+            <p>Creativity</p>
+            <p>Time management</p>
+            <p>Team player</p>
+          
+          </div>
+        </div>
+        <h2 class="alignCenter">Technical Skills</h2>
         <div class="row">
           <div class="col-1">
 
@@ -315,6 +329,8 @@
           </div>
 
         </div>
+
+
         <h2 class="alignCenter">Languages</h2>
         <div class="row">
           <div class="col-1">
@@ -322,6 +338,13 @@
               <tbody>
                 <tr>
                   <td>English</td>
+                  <td>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star  "></span>
+                    <span class="fa fa-star  "></span>
+                    <span class="fa fa-star "></span>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -330,6 +353,7 @@
             <table>
               <tbody>
                 <tr>
+                    <td>Siswati</td>
                   <td>
                     <span class="fa fa-star "></span>
                     <span class="fa fa-star "></span>
@@ -342,35 +366,6 @@
             </table>
 
           </div>
-        </div>
-        <div class="row">
-          <div class="col-1">
-            <table>
-              <tbody>
-                <tr>
-                  <td>Siswati</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="col-2">
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <span class="fa fa-star "></span>
-                    <span class="fa fa-star "></span>
-                    <span class="fa fa-star  "></span>
-                    <span class="fa fa-star  "></span>
-                    <span class="fa fa-star "></span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-
-
         </div>
 
 
@@ -481,7 +476,6 @@
             <img src="/images/projX2.jpg" alt="img">
 
 
-
           </div>
           <div class="shots">
 
@@ -500,17 +494,30 @@
     <div class="" id="Dev">
       <div class="container-fluid">
         <div class="container">
-          <h1>Developer section</h1>
-          <h4>Find what other developers are saying on twitter</h4>
+          <h1>Blog</h1>
+          <h4>This section is focused on live tweets updates from FreeCodeCamp. It is to highlight what I use to stay updated on trends and new tutorials regarding my favourite programming languages.</h4>
         </div>
-        <div class="row">
-            <h3> <%=data.text%></h3>
+          <div class="card-wrap content">
+          <%data.forEach(function(item){ %>
+              <div class="card alignCenter">
+                <article role="article">
+                  <% let entity = item.entities%>
+                  <% let url =entity.urls%>
+                  <%url.forEach(function(entit){ %>
+                    <h3>@FreeCodeCamp</h3>
+                    <p> <%=item.text.substr(0, entit.start) %></p>
 
-        </div>
+                      <a target="_blank" rel="noreferrer" href="<%=entit.url%>"> <%=entit.display_url%></a>
+                  <%})%>
+                </article>
+              </div>
+
+          <%})%>
+          <a class="prev" >&#10094; </a>
+          <a class="next" >&#10095;</a>
+          </div>
 
       </div>
-
-
     </div>
 
     <div class="footer" id="Contact">
@@ -547,7 +554,6 @@
           <br>
           <p class="end">This was developed using JQUERY, HTML5 AND CSS</p>
           <p class="end">Webstar Maseko © 2020</p>
-
         </div>
       </div>
 

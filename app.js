@@ -6,7 +6,10 @@ const bp = require("body-parser");
 const request = require("request");
 const mailgun = require("mailgun-js");
 const twit = require("twit");
-const mg = mailgun({apiKey: process.env.APIKEY, domain: process.env.DOMAIN});
+const mg = mailgun({
+  apiKey: process.env.APIKEY,
+  domain: process.env.DOMAIN
+});
 
 const app = exp();
 app.set("view engine", "ejs");
@@ -17,32 +20,40 @@ app.use(bp.urlencoded({
 //const query  = '(developer OR software) remote (context:66.961961812492148736 OR context:66.850073441055133696) -is:retweet -"business developer"';
 
 let options = {
-  url :"https://api.twitter.com/2/tweets/search/recent",
+  url: "https://api.twitter.com/2/tweets/search/recent",
   method: "GET",
-  headers:{
+  headers: {
     Authorization: "Bearer " + process.env.TOKEN,
   },
-  qs:{
-    max_results:10,
-    query : "(developer) learn (javascript OR NODEJS) -is:retweet",
-    'tweet.fields': "created_at,context_annotations,entities",
-    'expansions' : 'author_id',
-    'user.fields': "created_at",
+  qs: {
+
+    max_results: 10,
+    query: "from:freeCodeCamp (programming OR javascript OR Node) -is:retweet -wordpress ",
+    'tweet.fields': "created_at,entities",
+    'expansions': 'author_id',
 
   },
 
 };
 
-
-
-
 app.get("/", function(req, res) {
 
-  request(options, function(error, response, body){
+  request(options, function(error, response, body) {
+    let data  = [];
+    if(!error){
+      let attrib = JSON.parse(body);
+      data = attrib.data;
+      data.forEach(function(item) {
+      });
+    }
+    else{
+      data = ["Sorry data is temporary unavailable, check again later"];
+    }
 
-    let attrib = JSON.parse(body) ;
-    let data = attrib.data;
-    res.render("home.ejs", {data:data});
+
+    res.render("home.ejs", {
+      data: data
+    });
   });
 
 });
