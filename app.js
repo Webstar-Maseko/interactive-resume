@@ -17,7 +17,6 @@ app.use(exp.static("Public"));
 app.use(bp.urlencoded({
   extended: true
 }));
-//const query  = '(developer OR software) remote (context:66.961961812492148736 OR context:66.850073441055133696) -is:retweet -"business developer"';
 
 let options = {
   url: "https://api.twitter.com/2/tweets/search/recent",
@@ -49,7 +48,6 @@ app.get("/", function(req, res) {
     else{
       data = ["Sorry data is temporary unavailable, check again later"];
     }
-
 
     res.render("home.ejs", {
       data: data
@@ -91,7 +89,6 @@ app.post("/", function(req, res) {
   });
 
 });
-
 
 app.listen(process.env.PORT || 3000, function() {
   console.log("listening on 3000");

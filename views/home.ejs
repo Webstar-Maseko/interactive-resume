@@ -23,10 +23,9 @@
 </head>
 
 <body class="">
-
   <div class="loader">
     <img src="/images/480.gif" alt="">
-    <p class="move">loading...</p>
+    <p class="move alignCenter">loading...</p>
   </div>
   <div class="wrapper animate-bottom">
     <div class="navbar" id="navhead">
@@ -124,7 +123,7 @@
             <p>Creativity</p>
             <p>Time management</p>
             <p>Team player</p>
-          
+
           </div>
         </div>
         <h2 class="alignCenter">Technical Skills</h2>
@@ -505,7 +504,7 @@
                   <% let url =entity.urls%>
                   <%url.forEach(function(entit){ %>
                     <h3>@FreeCodeCamp</h3>
-                    <p> <%=item.text.substr(0, entit.start) %></p>
+                    <p> <%=(item.text.substr(0, entit.start)).replace(/&amp;/g, "&") %></p>
 
                       <a target="_blank" rel="noreferrer" href="<%=entit.url%>"> <%=entit.display_url%></a>
                   <%})%>
@@ -552,7 +551,7 @@
 
           </p>
           <br>
-          <p class="end">This was developed using JQUERY, HTML5 AND CSS</p>
+          <p class="end">This was developed using JQuery,Node.js HTML5 AND CSS</p>
           <p class="end">Webstar Maseko © 2020</p>
         </div>
       </div>
