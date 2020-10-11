@@ -16,7 +16,7 @@ body {
 }
 .feedback{
   font-size: 1.7rem;
-  color: inheri;
+  color: inherit;
 }
 .wrapper{
   display: none;
