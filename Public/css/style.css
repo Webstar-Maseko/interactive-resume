@@ -108,8 +108,10 @@ body {
 
 .land {
   background-image: linear-gradient(rgba(20, 0, 30, 0.5), rgba(20, 0, 30, 0.5)),
-    url("/images/ace.jpg");
-  background-position: left;
+    url("/images/ace1.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
 }
 
@@ -195,6 +197,7 @@ body {
 .container {
   padding: 6% 20%;
   text-align: center;
+  transition: ease-in 2s;
 }
 
 .content {
