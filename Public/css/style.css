@@ -89,8 +89,8 @@ body {
 }
 
 .profilePic {
-  width: 250px;
-  height: 250px;
+  width: 270px;
+  height: 270px;
   border-radius: 50%;
   border-style: double;
   border-color: brown;
@@ -108,7 +108,7 @@ body {
 
 .land {
   background-image: linear-gradient(rgba(20, 0, 30, 0.5), rgba(20, 0, 30, 0.5)),
-    url("/images/ace1.jpg");
+    url("/images/one (2).jpg");
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
@@ -233,7 +233,7 @@ body {
 }
 
 .footer {
-  background-image: -webkit-linear-gradient(-80deg, #343a40 50%, #212529 50%);
+  background-image: -webkit-linear-gradient(-80deg, #212529 50%, #343a40 50%);
   color: #6c757d;
 }
 .dark {
@@ -367,6 +367,15 @@ td {
   text-align: left;
   padding: 0.7rem;
 }
+.btn {
+  background-color: steelblue;
+  height: 39px;
+  border: none;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #fff;
+}
 
 .tggl {
   font-size: 0.8rem;
@@ -394,11 +403,15 @@ td {
   .navbar a.anch {
     display: block;
   }
+  .navbar {
+    height: 36px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .navbar.responsive {
     position: fixed;
+    height: 59vh;
   }
 
   .navbar.responsive .icon {
@@ -470,7 +483,7 @@ td {
     left: -100px;
   }
 }
-@@keyframes slide {
+@keyframes slide {
   from {
     left: auto;
   }
