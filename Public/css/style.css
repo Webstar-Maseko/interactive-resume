@@ -23,13 +23,11 @@ body {
   display: none;
 }
 .loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .card {
   display: none;
@@ -331,6 +329,7 @@ h3 a:hover {
   background-color: transparent;
   color: white;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 .btn-sub:hover {
   background-color: #3d5a80;
@@ -395,7 +394,12 @@ td {
   background-color: inherit;
 }
 /* media queries */
+
 @media screen and (max-width: 600px) {
+  .navbar.responsive {
+    position: fixed;
+    height: 59vh;
+  }
   .navbar a:not(:last-child) {
     display: none;
   }
@@ -409,13 +413,6 @@ td {
   }
   .navbar {
     height: 36px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .navbar.responsive {
-    position: fixed;
-    height: 59vh;
   }
 
   .navbar.responsive .icon {
@@ -452,7 +449,7 @@ td {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 601px) {
   .col-1 {
     float: left;
     flex: 0 0 50%;
