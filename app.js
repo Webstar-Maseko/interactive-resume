@@ -78,7 +78,7 @@ app.post("/", function(req, res) {
         attrib = JSON.parse(body);
       } else {
         attrib = error;
-      }
+      } 
       res.render("close", {
         resp: resp,
         attrib: attrib
