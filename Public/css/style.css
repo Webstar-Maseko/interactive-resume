@@ -37,7 +37,7 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  height: 400px;
+  min-height: 210px;
   padding: 50px 10px;
 }
 .slide {
@@ -136,6 +136,10 @@ body {
   border-radius: 50%;
   border-style: double;
   border-color: yellow;
+}
+
+.footer .container-fluid {
+  padding-bottom: 0;
 }
 
 .container-fluid {
