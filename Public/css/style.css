@@ -284,25 +284,34 @@ body {
 }
 
 .footer {
-  background-image: -webkit-linear-gradient(-80deg, #212529 50%, #343a40 50%);
-  color: #6c757d;
+  background-image: -webkit-linear-gradient(-80deg, #212121 50%, black 50%);
+  color: #aca589;
 }
 .dark {
-  background-color: #212529;
-  color: #a4a8ac;
+  background-color: #212121;
+  color: #aca589;
+}
+.dark h1 {
+  color: yellow;
+}
+.dark h2 {
+  color: yellow;
+}
+.dark h3 {
+  color: yellow;
 }
 .grey {
-  background-color: #343a40;
-  color: #a4a8ac;
+  background-color: black;
+  color: #aca589;
 }
 
 .links {
   padding: 0.5rem 1rem;
-  color: #a278b5;
+  color: yellow;
   transition: all 0.2s;
 }
 .links:hover {
-  box-shadow: 5px 5px #616f39;
+  box-shadow: 5px 5px red;
 }
 
 .shots {
@@ -353,7 +362,7 @@ hr {
 
 a {
   text-decoration: none;
-  color: #a278b5;
+  color: #a7a946;
 }
 
 input,
